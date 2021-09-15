@@ -5,8 +5,6 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from '../styles/styles';
 
-/* Setting up constant for width to take device's dimensions */
-const { width: WIDTH } = Dimensions.get('window');
 
 const SignIn = (props) => {
     /* Managing state for component */
@@ -46,8 +44,7 @@ const SignIn = (props) => {
                             <Image
                                 source={require('../assets/icons/call.png')}
                                 style={{
-                                    position: 'absolute', top: 13, left: 0, borderBottomColor: '#ffffff',
-                                    borderBottomWidth: 1
+                                    position: 'absolute', top: 13, left: 0,
                                 }}
                             />
                             <TextInput
@@ -72,7 +69,7 @@ const SignIn = (props) => {
                             <Image
                                 source={require('../assets/icons/key.png')}
                                 style={{
-                                    position: 'absolute', top: 13, left: 0, borderBottomColor: '#ffffff', borderBottomWidth: 1,
+                                    position: 'absolute', top: 13, left: 0,
                                 }}
                             />
                             <TextInput
@@ -111,6 +108,7 @@ const SignIn = (props) => {
                         <View style={{ marginTop: 30 }}>
                             <TouchableOpacity
                                 style={styles.buttonPrimary}
+                                onPress={() => props.navigation.navigate('Home')}
                             >
                                 <Text style={{ color: '#ffff', fontSize: 20 }}>Login</Text>
                             </TouchableOpacity>

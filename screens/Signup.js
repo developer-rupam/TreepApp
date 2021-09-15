@@ -5,8 +5,6 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from '../styles/styles';
 
-/* Setting up constant for width to take device's dimensions */
-const { width: WIDTH } = Dimensions.get('window');
 
 const SignUp = (props) => {
     /* Managing state for component */
@@ -39,8 +37,7 @@ const SignUp = (props) => {
                             <Image
                                 source={require('../assets/icons/call.png')}
                                 style={{
-                                    position: 'absolute', top: 13, left: 0, borderBottomColor: '#ffffff',
-                                    borderBottomWidth: 1
+                                    position: 'absolute', top: 13, left: 0,
                                 }}
                             />
                             <TextInput
@@ -55,8 +52,7 @@ const SignUp = (props) => {
                             <Image
                                 source={require('../assets/icons/call.png')}
                                 style={{
-                                    position: 'absolute', top: 13, left: 0, borderBottomColor: '#ffffff',
-                                    borderBottomWidth: 1
+                                    position: 'absolute', top: 13, left: 0,
                                 }}
                             />
                             <TextInput
@@ -81,7 +77,7 @@ const SignUp = (props) => {
                             <Image
                                 source={require('../assets/icons/key.png')}
                                 style={{
-                                    position: 'absolute', top: 13, left: 0, borderBottomColor: '#ffffff', borderBottomWidth: 1,
+                                    position: 'absolute', top: 13, left: 0,
                                 }}
                             />
                             <TextInput
@@ -98,7 +94,7 @@ const SignUp = (props) => {
                             <Image
                                 source={require('../assets/icons/key.png')}
                                 style={{
-                                    position: 'absolute', top: 13, left: 0, borderBottomColor: '#ffffff', borderBottomWidth: 1,
+                                    position: 'absolute', top: 13, left: 0,
                                 }}
                             />
                             <TextInput

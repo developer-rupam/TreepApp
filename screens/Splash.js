@@ -3,8 +3,7 @@ import React,{useState} from 'react';
 import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
 import { styles } from '../styles/styles';
 
-/* Setting up constant for width to take device's dimensions */
-const { width: WIDTH } = Dimensions.get('window');
+
 
 const Splash = (props) => {
     return (
