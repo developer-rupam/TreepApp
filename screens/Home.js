@@ -9,128 +9,157 @@ import { styles } from '../styles/styles';
 
 const Home = (props) => {
     /* Managing state for component */
-    const [tripList, seTripList] = useState([]);
+    const [tripList, setTripList] = useState([]);
 
-    /* Mrthod defination to render lists of trip */
-     this._renderTripList = () => {
-        // let list = [
-        //     {
-        //         id: 1,
-        //         title: 'Trip to Colorado',
-        //         type: 1,
-        //         distance: 200,
-        //         distanceUnit: 1,
-        //         status: 2,
-        //         memebers: [
-        //             {
-        //                 id: 343,
-        //                 name: 'Joker',
-        //                 phone: '9845678393',
-        //             },
-        //             {
-        //                 id: 343,
-        //                 name: 'Joker',
-        //                 phone: '9845678393',
-        //             },
-        //             {
-        //                 id: 343,
-        //                 name: 'Joker',
-        //                 phone: '9845678393',
-        //             },
-        //         ],
-        //     },
-        //     {
-        //         id: 1,
-        //         title: 'Trip to Colorado',
-        //         type: 1,
-        //         distance: 200,
-        //         distanceUnit: 1,
-        //         status: 2,
-        //         memebers: [
-        //             {
-        //                 id: 343,
-        //                 name: 'Joker',
-        //                 phone: '9845678393',
-        //             },
-        //             {
-        //                 id: 343,
-        //                 name: 'Joker',
-        //                 phone: '9845678393',
-        //             },
-        //             {
-        //                 id: 343,
-        //                 name: 'Joker',
-        //                 phone: '9845678393',
-        //             },
-        //         ],
-        //     },
-        //     {
-        //         id: 1,
-        //         title: 'Trip to Colorado',
-        //         type: 1,
-        //         distance: 200,
-        //         distanceUnit: 1,
-        //         status: 2,
-        //         memebers: [
-        //             {
-        //                 id: 343,
-        //                 name: 'Joker',
-        //                 phone: '9845678393',
-        //             },
-        //             {
-        //                 id: 343,
-        //                 name: 'Joker',
-        //                 phone: '9845678393',
-        //             },
-        //             {
-        //                 id: 343,
-        //                 name: 'Joker',
-        //                 phone: '9845678393',
-        //             },
-        //         ],
-        //     },
-        //     {
-        //         id: 1,
-        //         title: 'Trip to Colorado',
-        //         type: 1,
-        //         distance: 200,
-        //         distanceUnit: 1,
-        //         status: 2,
-        //         memebers: [
-        //             {
-        //                 id: 343,
-        //                 name: 'Joker',
-        //                 phone: '9845678393',
-        //             },
-        //             {
-        //                 id: 343,
-        //                 name: 'Joker',
-        //                 phone: '9845678393',
-        //             },
-        //             {
-        //                 id: 343,
-        //                 name: 'Joker',
-        //                 phone: '9845678393',
-        //             },
-        //         ],
-        //     },
-        // ];
+    /** 
+     * Method defination to render lists of trip 
+     * Data will be coming from API call, initally setting as static list of objects
+    **/
+    const _renderTripList = ({item}) => {
+        let list = [
+            {
+                id: 1,
+                title: 'Trip to Colorado',
+                type: 1,
+                distance: 200,
+                distanceUnit: 1,
+                status: 2,
+                memebers: [
+                    {
+                        id: 343,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                    {
+                        id: 343,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                    {
+                        id: 343,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                ],
+            },
+            {
+                id: 1,
+                title: 'Trip to Colorado',
+                type: 1,
+                distance: 200,
+                distanceUnit: 1,
+                status: 2,
+                memebers: [
+                    {
+                        id: 343,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                    {
+                        id: 343,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                    {
+                        id: 343,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                ],
+            },
+            {
+                id: 1,
+                title: 'Trip to Colorado',
+                type: 1,
+                distance: 200,
+                distanceUnit: 1,
+                status: 2,
+                memebers: [
+                    {
+                        id: 343,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                    {
+                        id: 343,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                    {
+                        id: 343,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                ],
+            },
+            {
+                id: 1,
+                title: 'Trip to Colorado',
+                type: 1,
+                distance: 200,
+                distanceUnit: 1,
+                status: 2,
+                memebers: [
+                    {
+                        id: 343,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                    {
+                        id: 343,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                    {
+                        id: 343,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                ],
+            },
+        ];
 
-        // this.seTripList(list);
+        setTripList(list);
+        console.warn('here')
+        return (
+            <TouchableOpacity style={inStyle.card}>
+                <View style={inStyle.cardLeftPanel}>
+                    <Image
+                        source={require('../assets/icons/surf-van.png')}
+                    />
+                </View>
+                <View style={inStyle.cardRightPanel}>
+                    <View>
+                        <Text
+                            style={{
+                                fontSize: 20,
+                                fontFamily: 'Montserrat-Medium',
+                                color: '#ffffff',
+
+                            }}
+                        >{item.title}</Text>
+                    </View>
+                </View>
+            </TouchableOpacity>
+        )
+
     };
 
     /* Lifecycle Hook */
     useEffect(() => {
         /* Calling method to render all trip list on page load  */
-        this._renderTripList();
-    });
+        _renderTripList();
+        return () => {
+            
+        }
+    },[]);
 
     return (
 
         <View>
             <View style={inStyle.headerContainer} />
             {/* <ScrollView> */}
-                {/*  <TouchableOpacity style={inStyle.card}>
+            {/*  <TouchableOpacity style={inStyle.card}>
                     <View style={inStyle.cardLeftPanel}>
                         <Image
                             source={require('../assets/icons/surf-van.png')}
@@ -149,33 +178,12 @@ const Home = (props) => {
                         </View>
                     </View>
                 </TouchableOpacity> */}
-                <FlatList
-                    data={tripList}
-                    keyExtractor={item => item.id}
-                    renderItem={({ item, index }) => {
-                        <TouchableOpacity style={inStyle.card}>
-                            <View style={inStyle.cardLeftPanel}>
-                                <Image
-                                    source={require('../assets/icons/surf-van.png')}
-                                />
-                            </View>
-                            <View style={inStyle.cardRightPanel}>
-                                <View>
-                                    <Text
-                                        style={{
-                                            fontSize: 20,
-                                            fontFamily: 'Montserrat-Medium',
-                                            color: '#ffffff',
+            <FlatList
+                data={tripList}
+                keyExtractor={item => item.id}
+                renderItem={item}
+            />
 
-                                        }}
-                                    >Road Trip To Colorado</Text>
-                                </View>
-                            </View>
-                        </TouchableOpacity>
-                    }}
-                >
-
-                </FlatList>
 
             {/* </ScrollView> */}
         </View>
