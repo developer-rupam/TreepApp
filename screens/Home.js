@@ -12,13 +12,38 @@ const Home = (props) => {
     const [tripList, setTripList] = useState([]);
 
     /** 
-     * Method defination to render lists of trip 
-     * Data will be coming from API call, initally setting as static list of objects
-    **/
-    const _renderTripList = ({item}) => {
+     * Method defination to get all trip list by API call
+     **/
+    const _getAllTripList = () => {
         let list = [
+            
             {
-                id: 1,
+                id: 2,
+                title: 'Trip to Colorado',
+                type: 1,
+                distance: 200,
+                distanceUnit: 1,
+                status: 2,
+                memebers: [
+                    {
+                        id: 56654,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                    {
+                        id: 456456,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                    {
+                        id: 4986,
+                        name: 'Joker',
+                        phone: '9845678393',
+                    },
+                ],
+            },
+            /* {
+                id: 3,
                 title: 'Trip to Colorado',
                 type: 1,
                 distance: 200,
@@ -31,19 +56,19 @@ const Home = (props) => {
                         phone: '9845678393',
                     },
                     {
-                        id: 343,
+                        id: 789,
                         name: 'Joker',
                         phone: '9845678393',
                     },
                     {
-                        id: 343,
+                        id: 102,
                         name: 'Joker',
                         phone: '9845678393',
                     },
                 ],
             },
             {
-                id: 1,
+                id: 4,
                 title: 'Trip to Colorado',
                 type: 1,
                 distance: 200,
@@ -51,76 +76,32 @@ const Home = (props) => {
                 status: 2,
                 memebers: [
                     {
-                        id: 343,
+                        id: 456,
                         name: 'Joker',
                         phone: '9845678393',
                     },
                     {
-                        id: 343,
+                        id: 457,
                         name: 'Joker',
                         phone: '9845678393',
                     },
                     {
-                        id: 343,
+                        id: 789,
                         name: 'Joker',
                         phone: '9845678393',
                     },
                 ],
-            },
-            {
-                id: 1,
-                title: 'Trip to Colorado',
-                type: 1,
-                distance: 200,
-                distanceUnit: 1,
-                status: 2,
-                memebers: [
-                    {
-                        id: 343,
-                        name: 'Joker',
-                        phone: '9845678393',
-                    },
-                    {
-                        id: 343,
-                        name: 'Joker',
-                        phone: '9845678393',
-                    },
-                    {
-                        id: 343,
-                        name: 'Joker',
-                        phone: '9845678393',
-                    },
-                ],
-            },
-            {
-                id: 1,
-                title: 'Trip to Colorado',
-                type: 1,
-                distance: 200,
-                distanceUnit: 1,
-                status: 2,
-                memebers: [
-                    {
-                        id: 343,
-                        name: 'Joker',
-                        phone: '9845678393',
-                    },
-                    {
-                        id: 343,
-                        name: 'Joker',
-                        phone: '9845678393',
-                    },
-                    {
-                        id: 343,
-                        name: 'Joker',
-                        phone: '9845678393',
-                    },
-                ],
-            },
-        ];
+            }, */
+        ]
 
         setTripList(list);
-        console.warn('here')
+    }
+
+    /** 
+     * Method defination to render lists of trip 
+    **/
+    const _renderTripList = ({item}) => {
+       console.warn(item);
         return (
             <TouchableOpacity style={inStyle.card}>
                 <View style={inStyle.cardLeftPanel}>
@@ -148,7 +129,7 @@ const Home = (props) => {
     /* Lifecycle Hook */
     useEffect(() => {
         /* Calling method to render all trip list on page load  */
-        _renderTripList();
+        _getAllTripList();
         return () => {
             
         }
@@ -178,12 +159,12 @@ const Home = (props) => {
                         </View>
                     </View>
                 </TouchableOpacity> */}
-            <FlatList
+             <FlatList
                 data={tripList}
-                keyExtractor={item => item.id}
-                renderItem={item}
+                keyExtractor={item => `${item.id}`}
+                renderItem={_renderTripList}
             />
-
+ 
 
             {/* </ScrollView> */}
         </View>
