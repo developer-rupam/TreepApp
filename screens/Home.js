@@ -42,7 +42,7 @@ const Home = (props) => {
                     },
                 ],
             },
-            /* {
+            {
                 id: 3,
                 title: 'Trip to Colorado',
                 type: 1,
@@ -91,7 +91,7 @@ const Home = (props) => {
                         phone: '9845678393',
                     },
                 ],
-            }, */
+            },
         ]
 
         setTripList(list);
